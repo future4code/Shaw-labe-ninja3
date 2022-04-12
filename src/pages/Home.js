@@ -1,9 +1,9 @@
 import React from 'react';
 import Axios from 'axios';
-import styledComponents from 'styled-components';
+import styled from 'styled-components';
 
 
-export class Home extends Component {
+export default class Home extends React.Component {
 
 
 	render() {

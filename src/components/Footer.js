@@ -1,9 +1,9 @@
 import React from 'react';
 import Axios from 'axios';
-import styledComponents from 'styled-components';
+import styled from 'styled-components';
 
 
-export class Footer extends Component {
+export  default class Footer extends React.Component {
 
 
 	render() {
