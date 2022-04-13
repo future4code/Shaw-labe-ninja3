@@ -5,7 +5,6 @@ import  Carrinho  from './pages/Carrinho';
 import  Header  from './components/Header';
 import  Home  from './pages/Home';
 import  Footer  from './components/Footer';
-
 import  Contratacao  from './pages/Contratacao';
 import  AddJob  from './pages/AddJob';
 import  QuemSomos  from './pages/QuemSomos';

@@ -73,7 +73,7 @@ export  default class AddJob extends React.Component {
 			<AdicionaServico>			
 			
 			
-				<h1>Cadastre seu serviço</h1>
+				<h1>Cadastre seu serviçoOIOIOI</h1>
 
 				<input placeholder="Digite sua profissão" 
 				type="text" 
