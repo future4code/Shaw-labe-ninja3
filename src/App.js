@@ -9,6 +9,7 @@ import  Contratacao  from './pages/Contratacao';
 import  AddJob  from './pages/AddJob';
 import  QuemSomos  from './pages/QuemSomos';
 
+
 export default class App extends  React.Component {
 
 
@@ -17,11 +18,10 @@ export default class App extends  React.Component {
 	  return (
 		<div>
 		  
-		  <Header/>
-		  <Home/>
 		 
+		 <AddJob/>
 		 
-		  <Footer/>
+		  
 		</div>
 	  )
 	}
