@@ -3,8 +3,21 @@ import axios from 'axios';
 import styled from 'styled-components';
 import Header from '../components/Header';
 import Footer from '../components/Header';
+import TextField from "@material-ui/core/TextField";
 
+
+
+//só testei o styled
 const AdicionaServico=styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 10px;
+  padding: 30px;
+  height: 70vh;
+  width: 50vw;
+  justify-content: space-around;
+  text-align: center;
 `
 
 
@@ -16,7 +29,7 @@ export  default class AddJob extends React.Component {
 		descricao:"",
 		preco:"",
 		tipoPagamento:[],
-		calendario:""
+		dueDate: new Date().toISOString().split("T")[0]
 	}
 
 	onChangeServico=(event)=>{
@@ -45,7 +58,8 @@ export  default class AddJob extends React.Component {
 			description:"",
 			price: Number(),
 			paymentMethods:[],
-			dueDate:""			
+			dueDate:this.state.dueDate,
+					
 		}
 
 		axios.post(url, headers, body)
@@ -55,7 +69,7 @@ export  default class AddJob extends React.Component {
 			descricao:"",
 			preco:"",
 			tipoPagamento:[],
-			calendario:""})		
+			dueDate:new Date().toISOString().split("T")[0]})		
 		
 		
 		}).catch((erro)=>{
@@ -123,9 +137,18 @@ export  default class AddJob extends React.Component {
 					type="checkbox" 
 					onChange={this.onChangePagamento} 
 					value= "Boleto"/>
-					<label>Boleto</label>  
+					<label>Boleto</label> 
+					 
 				</div>
-
+				<TextField
+          placeholder="Prazo"
+          label="Prazo"
+          name="dueDate"
+          type="date"
+          value={this.state.dueDate}
+          onChange={this.changeInputValues}
+        />
+		
 				<br/>
 				<button onClick={this.adicionaServico}>Cadastrar serviço</button>
 

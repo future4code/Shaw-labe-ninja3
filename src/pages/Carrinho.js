@@ -4,6 +4,25 @@ import styled from 'styled-components';
 
 
 export default class Carrinho extends React.Component {
+	
+	state = {
+		carrinho:      [],
+		tipoPagamento: []
+	  };
+	
+	  /*componentDidMount() {
+		const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+		const tipoPagamento = carrinho.map(() => "");
+		this.setState({
+		  carrinho,
+		  tipoPagamento
+		});
+	  }
+	
+	  componentDidUpdate() {
+		localStorage.setItem("carrinho", JSON.stringify(this.state.carrinho));
+	  }*/
+
 
 
 	render() {
