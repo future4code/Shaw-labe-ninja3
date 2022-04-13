@@ -10,29 +10,23 @@ import  AddJob  from './pages/AddJob';
 import  QuemSomos  from './pages/QuemSomos';
 
 
+export default class App extends  React.Component {
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /* 
+	render() {
+	  
+	  return (
+		<div>
+		  
+		 
+		 <AddJob/>
+		 
+		  
+		</div>
+	  )
+	}
+  }
+/* 
 foto main junto com  o input de pesquisa
 
  <div>
@@ -42,21 +36,3 @@ foto main junto com  o input de pesquisa
 		  <button>pesquisar</button>
 		  </div>
 		  */
-
-export default class App extends  React.Component {
-
-
-	render() {
-	  
-	  return (
-		<div>
-		  
-		  <Header/>
-		  <Home/>
-		 
-		 
-		  <Footer/>
-		</div>
-	  )
-	}
-  }

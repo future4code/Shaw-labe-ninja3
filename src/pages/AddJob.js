@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import Header from '../components/Header';
-import Footer from '../components/Header';
-import TextField from "@material-ui/core/TextField";
+//import Header from '../components/Header';
+//import Footer from '../components/Header';
+//import TextField from "@material-ui/core/TextField";
 
 
 
@@ -82,7 +82,7 @@ export  default class AddJob extends React.Component {
 	  
 	  return (
 		<div>
-			<Header/>
+			{/* Header/>*/}
 
 			<AdicionaServico>			
 			
@@ -140,21 +140,21 @@ export  default class AddJob extends React.Component {
 					<label>Boleto</label> 
 					 
 				</div>
-				<TextField
+				{/*  <TextField
           placeholder="Prazo"
           label="Prazo"
           name="dueDate"
           type="date"
           value={this.state.dueDate}
           onChange={this.changeInputValues}
-        />
+	  /> */}
 		
 				<br/>
 				<button onClick={this.adicionaServico}>Cadastrar serviço</button>
 
 			</AdicionaServico>
 
-			<Footer/>		
+			{/*<Footer/>	*/ }	
 
 		</div>
 	  )
