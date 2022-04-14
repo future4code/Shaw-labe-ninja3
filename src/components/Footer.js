@@ -5,7 +5,8 @@ export default class footer extends React.Component{
 	render(){
 		return(
 			<div>
-				a
+		
+				 
 			</div>
 		)
 	}
