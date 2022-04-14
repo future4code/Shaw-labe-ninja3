@@ -10,6 +10,7 @@ import  Contratacao  from './pages/Contratacao';
 import  AddJob  from './pages/AddJob';
 import  QuemSomos  from './pages/QuemSomos';
 import CartaoDeServicos from './components/CartaoDeServicos';
+import ValorContratacao from './pages/ValorContratacao';
 
 
 
@@ -38,7 +39,9 @@ export default class App extends React.Component {
 	  return (
 		<div>
 		 <AddJob/>
+		 <ValorContratacao/>
 		 <CartaoDeServicos/>
+		 
 		</div>
 	  )
 	}
