@@ -12,36 +12,31 @@ import QuemSomos from './pages/QuemSomos';
 
 export default class App extends React.Component {
 	state = {
-		telaAtual: ""
+		telaAtual: "home"
 
 	}
 	selecionarPagina = () => {
 		switch (this.state.telaAtual) {
 			case "sejaUmNinja":
-				return <AddJob />
+				return <AddJob irParaPagina={this.irParaPagina}/>
 			case "contrateUmNinja":
-				return <Contratacao />
+				return <Contratacao  irParaPagina={this.irParaPagina}/>
 			case "quemSomos":
-				return <QuemSomos />
+				return <QuemSomos irParaPagina={this.irParaPagina}/>
 			default:
-				return <Home />
+				return <Home irParaPagina={this.irParaPagina}/>
 
 		}
 	}
-	irParaPagina = (telaAtual) =>{
-this.setState({telaAtual: "sejaUmNinja"})
+	irParaPagina = (sejaUmNinja) =>{
+this.setState({telaAtual: sejaUmNinja})
 	}
-	irParaPagina2 = (telaAtual) =>{
-		this.setState({telaAtual: "contrateUmNinja"})
-			}
-			irParaPagina3 = (telaAtual) =>{
-				this.setState({telaAtual: "quemSomos"})
-					}
+	
 	render() {
 
 		return (
 			<div>
-				<button></button>
+				
 				{this.selecionarPagina()}
 
 
