@@ -31,8 +31,8 @@ export default class App extends React.Component {
 				return <QuemSomos irParaPagina={this.irParaPagina}/>
 			default:
 				return <Home irParaPagina={this.irParaPagina}/>
-
-
+		}
+	}
 	render() {
 	  
 	  return (
@@ -63,4 +63,4 @@ foto main junto com  o input de pesquisa
 			</div>
 		)
 	}
-}
+}*/
