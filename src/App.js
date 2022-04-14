@@ -8,6 +8,10 @@ import  Footer  from './components/Footer';
 import  Contratacao  from './pages/Contratacao';
 import  AddJob  from './pages/AddJob';
 import  QuemSomos  from './pages/QuemSomos';
+import CartaoDeServicos from './components/CartaoDeServicos';
+
+
+
 
 
 export default class App extends  React.Component {
@@ -17,16 +21,20 @@ export default class App extends  React.Component {
 	  
 	  return (
 		<div>
-		  
-		 
 		 <AddJob/>
-		 
-		  
+		 <CartaoDeServicos/>
 		</div>
 	  )
 	}
   }
-/* 
+
+
+
+
+
+
+
+  /* 
 foto main junto com  o input de pesquisa
 
  <div>
