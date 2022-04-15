@@ -1,17 +1,44 @@
-import React from 'react';
-import Axios from 'axios';
-import styled from 'styled-components';
+import React from "react"
+import axios from "axios"
 
 
-export  default class Contratacao extends React.Component {
+
+export default class TelaServicos extends React.Component {
+    state = {
+        servicos: [],
+        valorMaximo: "",
+        valorMinimo: "",
+        busca: "",
+        ordenacao: "",
+    }
+	onChangeValorMaximo = (event) => {
+        this.setState({ valorMaximo: event.target.value })
+        console.log(this.state.valorMaximo)
+    }
+
+    onChangeValorMinimo = (event) => {
+        this.setState({ valorMinimo: event.target.value })
+        console.log(this.state.valorMaximo)
+    }
+
+    onChangeBusca = (event) => {
+        this.setState({ busca: event.target.value });
+    }
+
+    onChangeOrdenacao = (event) => {
+        this.setState({ ordenacao: event.target.value })
+    }
 
 
-	render() {
+        render() {
 	  
-	  return (
-		<div>
-		  <p>Contratação</p>
-		</div>
-	  )
-	}
-  }
+            return (
+             
+             <div>
+
+                  
+                <p>Tela de Serviços</p>
+              </div>
+            )
+          }
+        }
