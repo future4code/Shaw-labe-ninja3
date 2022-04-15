@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
+import Home from '../pages/Home';
+import QuemSomos from '../pages/QuemSomos';
 const Headerdiv = styled.div`
 border: 3px solid black;
 display:flex;
@@ -11,6 +13,8 @@ background-color: #F1F0FA;
 const ButtonHeader = styled.button`
 background-color:#9584D0;
 margin-top: 4%;
+margin-left: 400px;
+margin-top: 40px;
 `
 
 
@@ -18,12 +22,8 @@ margin-top: 4%;
 
 
 export default class Header extends React.Component{
-  state ={
-	  paginas: "app.js"
-  }
 
-
-
+	
 
 	render(){
 		return(
@@ -31,11 +31,12 @@ export default class Header extends React.Component{
 				<div>
 				<img src="https://labenu.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2a51ad96-d8b7-4df3-bf68-828d473c84ef%2Flabeninjas2.png?table=block&id=c22b9c9a-54d8-4d6e-935e-3931470828dc&spaceId=f97190af-c9c2-4592-9ae2-6311b6b728de&width=740&userId=&cache=v2 "width="140" height="140"/>
 				</div>
+				
 				<HaderA>
-					<ButtonHeader>Seja um ninja</ButtonHeader>
-					<ButtonHeader>Contrante um ninja</ButtonHeader>
-					<ButtonHeader>Quem somos</ButtonHeader>
+					<ButtonHeader >Voltar</ButtonHeader>
+					
 				</HaderA>
+				
 				
 			</Headerdiv>
 		)

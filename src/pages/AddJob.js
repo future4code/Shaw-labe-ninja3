@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-//import Header from '../components/Header';
+import Header from '../components/Header';
 //import Footer from '../components/Header';
 //import TextField from "@material-ui/core/TextField";
 
@@ -82,8 +82,8 @@ export  default class AddJob extends React.Component {
 	  
 	  return (
 		<div>
-			{/* Header/>*/}
-
+			<Header/>
+<div>
 			<AdicionaServico>			
 			
 			
@@ -156,6 +156,7 @@ export  default class AddJob extends React.Component {
 
 			{/*<Footer/>	*/ }	
 
+		</div>
 		</div>
 	  )
 	}
