@@ -20,6 +20,9 @@ const AdicionaServico=styled.div`
   text-align: center;
 `
 
+const Calendario=styled.div`
+`
+
 
 export  default class AddJob extends React.Component {
 
@@ -29,7 +32,7 @@ export  default class AddJob extends React.Component {
 		descricao:"",
 		preco:"",
 		tipoPagamento:[],
-		dueDate: new Date().toISOString().split("T")[0]
+		calendario:""
 	}
 
 	onChangeServico=(event)=>{
@@ -41,6 +44,11 @@ export  default class AddJob extends React.Component {
 	onChangePreco=(event)=>{
 		this.setState({preco:event.target.value})
 	}
+
+	//Cadastro não tá funcionando e acho que é por causa do pagamento. ele é um array e a gente não tá usando função de array 
+	// ou é a questão dos checkboxes mesmo O.O >>>> http://react.tips/checkboxes-in-react-16/
+	//outro exemplo/tutorial >>>>> https://www.robinwieruch.de/react-checkbox/
+
 	onChangePagamento=(event)=>{
 		this.setState({tipoPagamento:event.target.value})
 	}
@@ -58,23 +66,22 @@ export  default class AddJob extends React.Component {
 			description:"",
 			price: Number(),
 			paymentMethods:[],
-			dueDate:this.state.dueDate,
+			dueDate:""
 					
 		}
 
 		axios.post(url, headers, body)
-		.then((resposta)=>{
-			alert("Serviço incluido com sucesso!")
-			this.setState({nomeServico:"",
+		.then(()=>{
+			alert("Serviço cadastrado com sucesso!")
+			this.setState({
+			nomeServico:"",
 			descricao:"",
 			preco:"",
 			tipoPagamento:[],
-			dueDate:new Date().toISOString().split("T")[0]})		
-		
-		
-		}).catch((erro)=>{
-			alert(erro.message)
-		})
+			calendario:""
+			})
+
+		}).catch((erro)=>{alert(erro.message)})
 	}
 	
 	
@@ -108,7 +115,7 @@ export  default class AddJob extends React.Component {
 				value={this.state.preco}/><br/>
 
 				<div>
-					<p>Meio de pagamento de preferência:</p>
+					<p>Meio de recebimento de preferência:</p>
 					<input
 					type="checkbox" 
 					onChange={this.onChangePagamento} 
@@ -140,15 +147,7 @@ export  default class AddJob extends React.Component {
 					<label>Boleto</label> 
 					 
 				</div>
-				 {/*<TextField
-          placeholder="Prazo"
-          label="Prazo"
-          name="dueDate"
-          type="date"
-          value={this.state.dueDate}
-          onChange={this.changeInputValues}
-	  />*/} 
-		
+	
 				<br/>
 				<button onClick={this.adicionaServico}>Cadastrar serviço</button>
 
