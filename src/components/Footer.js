@@ -48,7 +48,9 @@ export default class footer extends React.Component{
 					<a href='https://www.instagram.com/luizmarcelofleite/'>
 					<img src="https://cdn-icons-png.flaticon.com/64/1074/1074766.png"/>
 					</a>
+					<a href='https://www.instagram.com/renata.s.zamboni/'>
 					<img src="https://cdn-icons-png.flaticon.com/64/6288/6288826.png"/>
+					</a>
 				</EquipeBOnecos>
 		      <TextoFooter>
 				 <lu>

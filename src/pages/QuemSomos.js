@@ -42,11 +42,11 @@ export  default class QuemSomos extends React.Component {
 				  <br/>
 				
 			  </h2>
-			  <p>
-				  somos uma empresa criada em 2022,focamos na area de prestaçoes de serviços 
-				  somos a maior empresa desse ramo, focada para sempre atender você o melhor possivel!
+			  	<p>
+				  Somos uma empresa criada em 2022, focamos na area de prestaçoes de serviços e
+				  somos a maior empresa desse ramo porque continuamos a entregar o nosso melhor!
 				  
-				  			  </p>
+				</p>
 								<br></br>
 								Tudo que voce precisa na ponta dos seus dedos!
 		  </LetraTexto>

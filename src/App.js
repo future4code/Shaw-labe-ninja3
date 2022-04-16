@@ -1,18 +1,24 @@
 import React from 'react';
-import Axios from 'axios';
-import style from 'styled-components';
-import Carrinho from './pages/Carrinho';
-import Header from './components/Header';
+//import Axios from 'axios';
+import styled from 'styled-components';
 import Home from './pages/Home';
-import Footer from './components/Footer';
+import Carrinho from './pages/Carrinho';
 import Contratacao from './pages/Contratacao';
 import AddJob from './pages/AddJob';
 import QuemSomos from './pages/QuemSomos';
+import Footer from './components/Footer';
 
+const ButtonHeader = styled.button`
+background-color:#9584D0;
+margin-top: 4%;
+margin-left: 400px;
+margin-top: 40px;
+`
 
 
 export default class App extends React.Component {
-	state = {
+	
+	/*state = {
 		telaAtual: "home"
 
 	}
@@ -30,19 +36,44 @@ export default class App extends React.Component {
 		}
 	}
 	irParaPagina = (sejaUmNinja) =>{
-this.setState({telaAtual: sejaUmNinja})
+	this.setState({telaAtual: sejaUmNinja})*/
+
+	state={
+		telaAtual:"Home"
 	}
+
+	escolherTelaAtual=()=>{
+		switch(this.state.telaAtual){
+			case "Home":
+				return <Home/>
+			case "AddJob":
+				return <AddJob/>
+			case "Contratacao":
+				return <Contratacao/>
+			case "Quem Somos":
+				return <QuemSomos/>
+			case "Carrinho":
+				return <Carrinho/>
+			default:
+				return <Home/>
+		}
+	}
+
 	
-	render() {
+	
+	render(){
 
 		return (
 			<div>
 		       
-				{this.selecionarPagina()}
+				{/*{this.selecionarPagina()}*/}
+				<Home/>
+				<ButtonHeader onClick={()=>this.escolherTelaAtual()}>Voltar</ButtonHeader>
+				
 				<Footer/>
            
 
 			</div>
-		)
+		);
 	}
 }
