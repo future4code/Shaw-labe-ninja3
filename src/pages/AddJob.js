@@ -147,6 +147,11 @@ export  default class AddJob extends React.Component {
 					<label>Boleto</label> 
 					 
 				</div>
+
+				<Calendario>
+					<p>Prazo de execução do serviço</p>
+					<br/><input type="date" value={this.state.calendario} onChange={this.onChangeCalendario}/>
+				</Calendario>
 	
 				<br/>
 				<button onClick={this.adicionaServico}>Cadastrar serviço</button>
