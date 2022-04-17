@@ -3,6 +3,8 @@ import Axios from 'axios';
 import styled from 'styled-components';
 import Home from './Home';
 import Header from '../components/Header';
+
+
 const PaiQuemSomos = styled.div`
 border: 4px solid black;
 display:flex;
@@ -16,12 +18,36 @@ const LetraTexto =styled.div`
 margin-top: 5%;
 margin-left: 5%;
 background-color:#F1F0FA;
+`
 
+const ButtonHeader = styled.button`
+background-color:#9584D0;
+margin-top: 4%;
+margin-left: 400px;
+margin-top: 40px;
 `
 
 
 
 export  default class QuemSomos extends React.Component {
+
+	state={
+		telaAtual:"Home"
+	}
+
+	escolherTelaAtual=()=>{
+		switch(this.state.telaAtual){
+			case "Home":
+				return <Home/>
+			case "Quem Somos":
+				return <QuemSomos/>
+			default:
+				return <Home/>
+		}
+	}
+
+	escolherTelaAtual=(event)=>{this.setState({telaAtual:event.target.value})}
+
 
 
 	render() {
@@ -55,6 +81,9 @@ export  default class QuemSomos extends React.Component {
 
 
 		</PaiQuemSomos>
+
+		<ButtonHeader onClick={()=>this.escolherTelaAtual()}>Voltar</ButtonHeader>	
+
 		</div>
 	  )
 	}

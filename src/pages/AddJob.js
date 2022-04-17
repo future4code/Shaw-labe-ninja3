@@ -22,7 +22,8 @@ const AdicionaServico=styled.div`
 
 const Calendario=styled.div`
 `
-
+const MeioPagamento=styled.div`
+`
 
 export  default class AddJob extends React.Component {
 
@@ -50,24 +51,25 @@ export  default class AddJob extends React.Component {
 	//outro exemplo/tutorial >>>>> https://www.robinwieruch.de/react-checkbox/
 
 	onChangePagamento=(event)=>{
-		this.setState({tipoPagamento:event.target.value})
+		this.setState({tipoPagamento: event.target.value})
 	}
 	onChangeCalendario=(event)=>{
-		this.setState({calendario:event.target.value})
+		this.setState({calendario: event.target.value})
 	}
 
 	adicionaServico=()=>{
+
 		const url = "{{baseURL}}/jobs"
 		const headers={
 			Authorization: "{{demo-key}}"
 		}
+
 		const body={
 			title:"",
 			description:"",
 			price: Number(),
 			paymentMethods:[],
-			dueDate:""
-					
+			dueDate:""					
 		}
 
 		axios.post(url, headers, body)
@@ -87,81 +89,101 @@ export  default class AddJob extends React.Component {
 	
 	render() {
 	  
-	  return (
-		<div>
-			<Header/>
-<div>
-			<AdicionaServico>			
-			
-			
-				<h1>Cadastre seu serviço</h1>
+	 	return (
 
-				<input placeholder="Digite sua profissão" 
-				type="text" 
-				onChange={this.onChangeServico} 
-				value={this.state.nomeServico}/><br/>
+			<div>
+
+				<Header/>			
+
+				<AdicionaServico>	
 				
-				<br/>
-				<input placeholder="Descreva seu serviço" 
-				type="text" 
-				onChange={this.onChangeDescricao} 
-				value={this.state.descricao}/><br/>
-
 				
-				<br/>
-				<input placeholder="Preço" 
-				type="number" 
-				onChange={this.onChangePreco} 
-				value={this.state.preco}/><br/>
+					<h1>Cadastre seu serviço</h1>
 
-				<div>
-					<p>Meio de recebimento de preferência:</p>
-					<input
-					type="checkbox" 
-					onChange={this.onChangePagamento} 
-					value= "Cartão de Crédito"/>
-					<label>Cartão de Crédito</label>	
+					<input placeholder="Digite sua profissão" 
+					type="text" 
+					onChange={this.onChangeServico} 
+					value={this.state.nomeServico}/><br/>
+					
+					<br/>
+					<input placeholder="Descreva seu serviço" 
+					type="text" 
+					onChange={this.onChangeDescricao} 
+					value={this.state.descricao}/><br/>
 
-					<input
-					type="checkbox" 
-					onChange={this.onChangePagamento} 
-					value= "Cartão de débito"/>
-					<label>Cartão de débito</label>	
+					
+					<br/>
+					<input placeholder="Preço" 
+					type="number" 
+					onChange={this.onChangePreco} 
+					value={this.state.preco}/><br/>
 
-					<input
-					type="checkbox" 
-					onChange={this.onChangePagamento} 
-					value= "Pix"/>
-					<label>Pix</label>
+					<MeioPagamento>
+						<p>Meio de recebimento de preferência:</p>
 
-					<input
-					type="checkbox" 
-					onChange={this.onChangePagamento} 
-					value= "PayPal"/>
-					<label>PayPal</label>
+						{/*
+						<input
+						type="checkbox" 
+						onChange={this.onChangePagamento} 
+						value= "Cartão de Crédito"/>
+						<label>Cartão de Crédito</label>	
 
-					<input
-					type="checkbox" 
-					onChange={this.onChangePagamento} 
-					value= "Boleto"/>
-					<label>Boleto</label> 
-					 
-				</div>
+						<input
+						type="checkbox" 
+						onChange={this.onChangePagamento} 
+						value= "Cartão de débito"/>
+						<label>Cartão de débito</label>	
 
-				<Calendario>
-					<p>Prazo de execução do serviço</p>
-					<br/><input type="date" value={this.state.calendario} onChange={this.onChangeCalendario}/>
-				</Calendario>
-	
-				<br/>
-				<button onClick={this.adicionaServico}>Cadastrar serviço</button>
+						<input
+						type="checkbox" 
+						onChange={this.onChangePagamento} 
+						value= "Pix"/>
+						<label>Pix</label>
 
-			</AdicionaServico>
+						<input
+						type="checkbox" 
+						onChange={this.onChangePagamento} 
+						value= "PayPal"/>
+						<label>PayPal</label>
 
-			{/*<Footer/>	*/ }	
+						<input
+						type="checkbox" 
+						onChange={this.onChangePagamento} 
+						value= "Boleto"/>
+						<label>Boleto</label>
+						*/}
 
-		</div>
-		</div>
-	  )
+						<form onSubmit={this.onChangePagamento}>
+
+							<label>
+								Como prefere receber seu pagamento?
+								<br/>				
+								<select value={this.state.tipoPagamento}><br/>
+									<option value="cartaoCredito">Catão de crédito</option>
+									<option value="cartaoDebito">Cartão de débito</option>
+									<option value="pix">Pix</option>
+									<option value="paypal">PayPal</option>
+									<option value="boleto">Boleto</option>
+								</select>
+							</label><br/>
+
+							<br/><input type="submit" value="Enviar"/>
+
+						</form>
+						
+					</MeioPagamento>
+
+					<Calendario>
+						<p>Prazo de execução do serviço</p>
+						<br/><input type="date" value={this.state.calendario} onChange={this.onChangeCalendario}/>
+					</Calendario>
+		
+					<br/>
+					<button onClick={this.adicionaServico}>Cadastrar serviço</button>
+
+				</AdicionaServico>				
+
+			</div>
+		) 
 	}
-  }
+}
